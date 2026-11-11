@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f8b6d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Мои смены">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFdElEQVR42u3dX2wTdQDA8bt23R/KmGzr/nTgNpMB+4v7B5MQthFGIMYQ4QFlI+HFKShRQ2J8MJpoHEtmRB7UGKMYEhIDMWqUuYGQ6BiibCxb3MY29n9sLVv3v1vt9e584UGWyshuBe/8fp7bX6/X7/Wu97tLxYiqowLgj4lVAOIAcYA4QBwgDhAHiAPEAeIAcQDEAeIAcYA4QBwgDhAHiAPEAeIAiAPEAeIAcYA4QBwgDhAHiAPEARAHiAPEAeIAcYA4QBwgDhAHiAPEARAHiAPEAeIAcYA4QBzQuyAjvZkTJfufWG3TPo6qqpIie2WfV5bnJe+4x+2ad7vmZgenJ3omR4emJ2RVIQ6dybcnZdgSAv0qkiJ3upw3HP03HAN1A123Ju4QB+6ymMzpNnu6zX4w8ylBEPqmXBd6Ws+2XW8Y6ScO3CMpIqo8e1t59rYOl/NU85WvWq56fBIHpLjH+qjYyu37ml9453BuUZDJRBxYKNa66njx3l8OvpEfn0Qc8CPdZq858NqR3GLigB9m0VRR/OzHuw6YRJE44EdpRsGHJfuJA/4dytry6qYdxAH/3tr6dHbc48QBPywm88mdz4mCSBzwIytmzd4N2cQB/44V7CQOXVJUVVYVRVUD9xJp0faNsWt1tE6YW7nreH111bVaQRBCgywrg0OiwqwpkbEbouK2J6VuTkg2i8uzFe1Py2t2DhKHXnl8kscnjc3NdricP3a1fHDtQmSY9aWcwsO5ReHBoRoHL0pcz27FUMbn3RX11flfvq99o0+Njo8MsxKH0Thmp3Z9ffKmy6FlEFEQs2LWEIcBzUvel2vOaBwk+bFo4jCmxpH+G44B4oB/1bdatDw9MpRjDuPqnRzT8vQVlmDiMCyne4Y44F9okKaTQwE9CUscj5htRbiWp7ulv4jDsDTOj8xJXuIwJlEQn0nJ0jLCyOwUcRjToY1bEsJXP8IfO8TxH5VhS3i3cI/GQbr1c28ts7IPas+6Jz/ZXWq1hGgZxOOTWu4MEYdBrAwO2ZGc9kre9rz4RO2jXR/u88oycSyzdZGxMdZV93+Mls06MSJq69oUURSslhCrJTgqbGVKZGxqdFy+PTnEvGxrqbanVUcbhm7ieH1zyfPpmwI3fllmQVlmQUDfgqwq59obdBQHB6QPT213q9M9TRxYSBXUivpqfS0zcTwkZ9sa/hy9TRxYaGR26s3L3+husYkj4CRFLq8+PeGZIw4s/IVSfv503UCXHheek2AB5PFJR2rOfNvRpNPlJ45AGZweL/v+Cx3d30YcD2lX8nnTr+/VndfRdT3EEXCqoP7Q2Vx5taZtbNgAb4c4lsf4vPtce+Op5isab4kjDuO4PTNxsbe9trv1Ul+bjqZbiSMgBxND0xO9k2Oto8NNjoFGR7+OLusychzfdTR1jjvv/5gXcwrjFpvW/zeX+27WDd49G6Gqqk9RJOWev9QYm5sdnpmUFPn/szHoJo7antZFL4bYtyFnyXH8NtR94veLfDv+E2dIQRwgDhAHiAP8WnkQIeagIJN5kdI1/HmFxWzWeE+KIAhzklcVVMPEIUZUHdXFgn66uyygV58vi7TP3h6emWS3Ao45QBwAcYA4QBwgDhAHiAPEAeKAcelmbsViMptNi6R8qfRYus2+tPErr/700R8/a1xIj08yUhy6mZWVFHnRi3u1zIjKimKwj5bdCogDxAHiAHGAOEAcIA6AOEAcWDrdzK2Abw4QB4gDxAHiAHEAxAHiAHGAOEAcIA4QB4gDxAHiAHEAxAHiAHGAOEAcIA4QB4gDxAHiAIgDxAHiAHGAOEAcIA4QB4gDxAEQB4gDxAHiAHGAOEAcIA4QB4gDxMEqAHGAOLB8/gY2c6IJ3/Ui2gAAAABJRU5ErkJggg==">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogItCc0L7QuCDRgdC80LXQvdGLIiwgInNob3J0X25hbWUiOiAi0JzQvtC4INGB0LzQtdC90YsiLCAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwgImJhY2tncm91bmRfY29sb3IiOiAiIzBmOGI2ZCIsICJ0aGVtZV9jb2xvciI6ICIjMGY4YjZkIiwgImxhbmciOiAicnUiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FJQUFBRGR2dnRRQUFBRjFFbEVRVlI0MnUzZFgwd2JkUURBOFJZb2Y4c0tsRCtkeVA0SWpEOERsZjF4RXNiRWJUSTBXNmJHb1dOT2syVzZvQ054eHVpRHlUUW1aZzhreE16RmgvbG5EN3FIelpuSnNqRGRtQW1JRHJZSlRCWmhBeXlzUUtFcEhkQi90S1hVQnhKam9wSHRyclJjNy90NWcxeCsxOS9sbStzZGQ5d3BOYlUxQ2tDb01EWUJDQWdFQkFJQ0FRRUVCQUlDQVlHQUFBSUNBWUdBUUVBQUFZR0FRRUFnSUlDQVFFQWdJQkFRQ0FnZ0lCQVFDQWdFQkJBUUNBZ0VCQUlDQ0FnRUJBSUNBUUVFQkFJQ0FZR0FRRUFBQVlHQVFFQWdJSUNBUUVBZ0lCQVFRRUFnSUJBUUNBZ2dJQkFRRm91SVVKM1l5V2YzWnlhaytHczByOC9uOXM2NFo3MGU3NHpON2JJNDdlTk91OWxwTTB4WjlCTm0vWVI1WXRwQlFDRWxNeUVsTjNscHdGWm5jbGpiallPZFk0YTJZZjJWNGY3cEdROEI0VDZreHNaWFpCWlVaQllvRkFxbng5MXM2RzNvNnpwN3EyUEs1UXp0aVlkSGwyOEl5WW50ZjdRME9UWStLS3RXaFlkbkphWStuVmxRdmJac2xWWTNiTDFydEUxeUVJMzdGaDJocXN4Yjk5UEw3M3ozUXZYNnBTc0lDQUp0V1pGM2NjK2hvOXQySjBiSEVoQ0VVQ3FVcnhRV3QrMTd2eVFqaTRBZy9GaTdmdGZCMTRwS0NRaEN6M3ZEd21xMzdLcGVXMFpBRU83SWs4OVhGV3dnSUFoWHQ3VXlWNnNqSUFnL3lmOWkrNnNSWVdFRUJJRUtVdEwzRmhZVEVJUjdyN2dpT2tKRlFCQklwOVk4bDFORVFLRm1lc2JUWXpiMm1JMzZDYlBKWWJWN1hBdTNycXJWRWo0ZDQycjhmK3NaSHkzN3V2YWZ2MG1JanMxSlNsdWRrbDcrVUg3Wjhody9mdTlzWEphbFUydEdwWG5CbFlEdTFjUzBvMjFFM3phaS8rcEdTNXdxNnNDYVRRZlhiVTZLaVJNL3NsS2hMTTNJL3JiN09sOWhjbUgzdU9yYUxqMTI0dVBXNFQvOU1xQjBMNUFSa0hCbWgyM242V05YUi9UaWgxcWpXMFpBY3VUeXpyejV3MG54TjdDdVRFZ21JSm5xdFpnYStycEVEaElmR2EzMXgrRVVBVW5TdWQ0YjRnZEpqVnRDUURMVlpSb1NQNGhhRlVWQU1tV3lXOFVQRXF1S0pDQ1pjczY0eFEraUNnOG5JSmxLamxHTEg4VHVjUk9RVEQwUW55QitFQWNCeWRiV2xmbmlCN0c2cGdsSWpzS1VTdkgzWTh6NmZFTldDd0hKMGV0Rm0vSkVQOFZoeERyaDlub0pTSFkycjhqOW9IU0grSEZ1VzhZa3VnVzRuVU9ncVBDSUEydWVPRnk2d3k5M3hWOFo2aWNndVZpdTBXN1BmdmlOdFdYcDhZbitHck5scUkrQUFrU24xbVFscHM2N1dLeTRLd1BxeUtpTkdkbHplNXE0eUtnNFZXVEdrcVJWMnJUQ2xBZHp0R24rblpIRmFiOCtNa0JBQWZKTVptSGRVNVVMdlphc3hOVHpMOVlFWmtabmVuN3p6SG9sR2hBSDBjSDNUVmVyZEQ4OEFRWFpoZjZ1My8xeE1aK0E1R2pXNS92bzUvT1NuZ0lCQmRNblZ4dTd6VVlDZ2hBZG8zZU8vTklnOVZrUVVIQU1UbzVYZmYrNWRFKytDQ2lZakxiSm5hZVBoY2F6Zi9sTGRLQmRNdzdzcmY5eU5GU2VIRTFBQVQzbk90N1JkTGlwWHFJWDNna295SWZNaHk2ZDZod3poTmk4Q0NnUTZkUzIvbmloNzZaUDRRdTkyUkhRUXJHNVhXZHZ0Wis4MmVhdkJ6QVFrQ3dNVEk0MzZ2OW8xSGMzM2JudGxPWjk4Z1FVT0ZNdTU5d0w1M3JHUnp2SERPM0dRWlBES3FzdElMMkFmaDN1Zi9meW1Ya1hlL3Z4Y3AySS96WWZtcnA3OU5ybHYzLzArbVk5WHUrLzMxZ1k4cThEQzhHQTVoNWRPTzlpK3g0cEVST1EyV2s3M3RITUxuWmUvQ1VhQkFRQ0FnR0JnQUFDQXFmeC82Y2tJK3VsL1BYekxxWlRhOFNzSldOSjBxZmJkb3YvdE9OTys0Zk41d2hvRWNsSjBnWGdGVW5hbURpL3JNVXdaUW50Z1BnS0F3R0JnRUJBSUNDQWdFQkFJQ0FRRUVCQUlDQXNZdEs3RnRiUTMzVXZUMVgrckdMUE1rMlM0TFgwM1RXOWRmR1UrRS9yRXYwMlRBTHlzMUhiNUwwOG1jRGhjWWxaaTgzdGFqSDBzb1BoS3d3RUJBSUNBUUVFQkFJQ0FZR0FBQUlDQVlHQUlHVktUVzBOV3dIc2dVQkFJQ0FRRUVCQUlDQVFFQWdJSUNBUUVBZ0lCQVFRRUFnSUJBUUNBZ2dJQkFRQ0FnR0JnQUFDQWdHQmdFQkFBQUdCZ0VCQUlDQ0FnRUJBSUNBUUVFQkFJQ0FRRUFnSUJBUVFFQWdJQkFRQ0FnZ0lCQVFDQWdFQkJBUUNBZ0dCZ0FBQ0FnR0JnQ0I5ZndGNndyaHNKekRyV2dBQUFBQkpSVTVFcmtKZ2dnPT0iLCAic2l6ZXMiOiAiMTkyeDE5MiIsICJ0eXBlIjogImltYWdlL3BuZyJ9LCB7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQWdBQUFBSUFDQUlBQUFCN0drT3RBQUFQNkVsRVFWUjQydTNkZVpEVzlYM0E4ZWZaWis4RmR0bGRibGdXVVM1RmNSVWxLcUlFYkQwVGIyMnJzYU1aTlMwem1qYW1adUtSbVRhTm95YlRaSnJ4U0cwOEpxM1dLNXFvbUVBRW9pSWlJSWZjc0xEQVh1eDk3ejdQOCtzZmRwalVUSk80QzlYZjgzdTkvb0psbVAzK1B0OW45LzM4bnVQM3hJc2ZYQklESUhxeWpBQkFBQUFRQUFBRUFBQUJBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQkFBQUFRQUFBRUFBQUJBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQkFBQUFRQUFBRUFBQUJBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUFRQUFBRUFBQUJBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUFRQUFBRUFBQUJBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBRUFBQUJBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBRUFBQUJBQ0Fxc28yQW9YamlrcHVPR3prcVl3NG5DSUpVRUtTQ2REcWRUZ1hwVkJEMEpaTzl5Zjd1NUVCdmNxQm5vTCtqdjdldHI2ZXRyNmV0dDZldHIrZHdkMmRqZDBkVFQyYzZDTndZRUFDaVpWYjV1Qm5sNHlJK2hGU1EvcmdFQjlwYjlyYzMxN1EzMTdTMzdHOXIydG5jME5IZjYwYUNBRURHU3NTenhoU05HRk0wNHFSUkV6N3hUL1ZkN2J1YUczYTJOSHpVZUdoanc0SE5qUWM3Ky90TURBR0F6UGR4R002ZWRQekhmdzFpUVhWcjAvcTYvV3NPVmI5ZnUzZGovWUdCZE1xVUVBRElmUEZZZkVwSitaU1M4aXRtVk1WaXNkN2t3THE2L1N2MmJWK3hmOGZhMnVwa09tMUVDQUJFUW41Mnpsa1RwNTQxY2VyZFoxL1UyZCszcW1iSGE3czJMOTI5dWFHN3czQVFBSWlLWWJsNUYwNmRmZUhVMmVrZytLQnUzNnM3UG54KzJ3ZUhPbHBOQmdHQXFNaUt4K2VPcTV3N3J2STdDeTU3cDJiM2Mxdlh2cmh0blZjVGNTd2s4aTg0MHhRWXRGdm16Qzh2SEc0T3gwSThGcThvTHIxdzZrbTNWUzJvTENtcjcycXY3V3d6RnB3QlFJUVU1dVRlTVBzTE44eit3b2I2bWgrOXYremw3UnRTZ2FlTE9ScW5tMFlBWVRGbnpLUi91K1NtOWJmY2UydlZ1Zm5aT1FhQ0FFQzBWQlNYUHJEd3FnMjMzSHZ6bkhOeXNoSUdnZ0JBdEl3ZFZ2endvbXMrdVBtZXEyZWViaG9JQUVUeGJPRHhpMjk4NC9vN1pvK2VZQm9JQUVUT3ZBbkhyYmpocmdjV1hsV1lrMnNhQ0FCRTdDYzVIcisxNnR4M2I3cDdRY1UwMDBBQUlISW1GNWY5L0pxLy9kN0NLM01Ubmh4R0FDQjZicXRhc1BUNk95dUx5NHdDQVlESU9YVnN4Y29iNzFwWU9jTW9FQUNJbkJGNUJjOWRjZHRmbjNLMlVTQUFFRG5aV1ZrL1dIenQvZWRlWmhRSUFFVFJIV2NzK3Q3Q0s4d0JBWUFvdXEzcXZJY1dYVzBPQ0FCRTBTMXo1bi83bkV2TUFRR0FLUHI3ZVJkNFRoZ0JnSWg2YU5IVmk2Yk1OQWNFQUNJbkVjOTY3S0liSjQ0WWFSUUlBRVJPYVVIUlU1ZmQ3Rm9SQ0FCRVVkWFlpbStkZmJFNUlBQVFSVXZtTGp4dDNHUnpFQUFnY2hMeHJCLy8rVi9sSmJLTlFnQ0F5SmxlTnVacnA1OXZEZ0lBUk5IZm5YbkI2TUxoNWlBQVFPUU15ODI3Wjc2M0J3c0FFRWwvY2RLWlUwckt6VUVBZ01oSnhMTytmdVppY3hBQUlJcXVPL0dNU1NOS3pVRUFnTWpKeVVwODlkVDU1aUFBUUJUOTVVbnp2Q2RBQUlBb0tpc28rdkwwVTgxQkFJQW91bUgyUEVNUUFDQ0t6cHA0L05paUVlWVFLUjcxSXlwcU85dG1QM2JmNzM0bEhvdm5KQks1aWV5Y3JFUnVJcnNrdjZDMG9HaGtmbEY1d2JDSzR0S0tFYVVWeFdYVHk4WU16ODJQeEozQmVQeEwwK2M4dW02bG00b0FRQVpLcHRPZitNcEFPdFU5MFAveG53OTJ0UHorZjRuSDRwVWxaYk5IVDZ3YVc3R2dZdG9wWXlabHhlT1pPcC9McDFjSmdBQUEveU9JQlh0YkQrOXRQZnpLamcyeFdLd2t2L0M4eWRPdm5GRzFlTXFzL095Y0REdll1ZU1yaS9NSzJ2cDY3THNBQUovVTJ0djk4dmIxTDI5ZlB6dzMvNG9aVlY4NzdmenBaV015NXVnUzhhd0ZrNmQvbkRxaXdKUEFNQmdkL2IxUGJueG4zcjkvOTVvWEg5bFFYNU14eC9YRnloazJWd0NBUHk2SUJXL3UrZWo4cHgrNi9mVm42cnJhTStDSTVsZWNZRnNGQVBnVUdmaVBMV3ZPK3VrL3Y3RjdjOWlQNWJpU1VhVUZSZlpVQUlCUG9ibW42N3FYSHZ2T3FsZkRmaUNuKzZ4Z0FRQUc0UWZ2L2VvYnkvNHJpQVhoUFlUVHhsWGFSd0VBQnVQeDlhdnVYeG5pODREWm95YllSQUVBQnVsZjF2ejZ0VjJiUXJyNGFSbjB3bFlFQUQ0RHQ3LytUR04zUnhoWFBxV2tQRGVSc0lNQ0FBeFNXMS9QZDk5K0xZd3JUOFN6cG80Y2JRY0ZBQmk4cHphK3U3MnBQb3dyci9BSmtRSUFERVVxU0QveDRhb3dybnpDOEpHMlR3Q0FJWG4ybzdXOXlZSFFMWHY4OEJKN0p3REFrTFQyZGkrdjNoYkNNd0FCRUFCZ3lGYnUzeEc2TmJzYWhBQUFSOEZiSVF4QWNWNkJqUk1BWUtoMk5OWDFwWkxoV25OSmZxR05Fd0JncU5KQlVOM2FKQUFJQUVUUm50YUdjQzI0SU9NKzdSSUJnTTlHWTNkbnVCYWNtK1ZTRUFJQUhBM2RBMzNoV25DMmF3RUpBSEJVZFBiM2gydkJPYzRBQkFBNEtwTHBWUGgrTmNUak5rNEFnS0VxeXNrTDE0SlRRVG9kQkRaT0FJQ2hLc3pKRGRlQ0IxSXB1eVlBd0ZFd0lpOC9YQXRPcHROMlRRQ0FvNkN5cER4Y0N3N2RXNWNSQVBpY21sb3lLbHdMYnUvcnNXc0NBQXhWV1VGUjZDNnUyZHJiYmVNRUFCaXFzeWVkRUxvMXR6a0RFQUJnNk02dENGOEFuQUVJQURCVThWaDg4WlJab1Z0MlhWZWJ2Uk1BWUVnV1RKNDJ1YmdzZE1zKzJORnE3d1FBR0pLdm5IeFdHSmN0QUFJQURNbXM4dkZmbWpZbmxBRm9iN0Y5QWdBTTNqK2U5K1dRWGxKdFYwdUQ3Uk1BWUpDdW16VjNZZVdNTUs3OGNIZG5VMCtYSFJRQVlEQm1sSTM5L3VKclE3cjRIYzMxZGxBQWdNRVlQN3prWjVkL05YUlhBRDFpNitGYW14Z1IyVVlBUjlHRTRTTi9jZTJTS1dHNyt0dnZXbGUzM3o0S0FQRHBuRFBwaEo5YzhwV3hSU05DZlJScmEvZmFTZ0VBL2xSNWlleXZ6N3ZnRy9QK0xPeWZwTmplMTdPanlVdUFCQUQ0MDF4OC9Nbi9kUDdsbFNGOHgrL3ZlKy9RM2lEbXd5QUZBUGlERXZHc3k2YWRzbVR1RjZ2R1ZtVE1RZjJtZXJ1ZEZRRGcvelN0ZE14Vk0wKzcvc1F6Sm8wb3piQkRXMTY5MWY0S0FQQy81R2Zuekp0dzNIbVRweSthTXZPa1VSTXk4aGdQZGJSdWE2cXoxd0lBa1pZVmo0OGRWank1dUd4bTJiaVR4MHc4ZWZURUUwZU56MHRrK00vTHF6czMybm9CSUJQTUhqMWgwYkcvRW4xcDRiQ3dER1JZYnQ2ZFp5Nyt4QmR6c2hJNWlVUnVWaUl2Tzdza3I3QWt2N0Mwb0tpOGNOakU0YVc1aVVUVWJqTXZiVi9uQjBjQXlBUnp4MDI1Yi82bDVuREU4Tng4QS9rRERuVzB2bmZRT3dBaWRxWnJCRUFzRm50dTYxb3ZBQlVBSUhLQ1dQRFREOTgyQndFQUltZlozbTNWYlUzbUlBQkE1UHhrd3lwREVBQWdjclkwSGxxNmU0czVDQUFRT1ErdFh1cnBYd0VBSW1kN1UvM1BkMnd3QndFQUl1ZmVGUytuQTNmL0JRQ0ltT1hWMjVidThlaS9BQUFSTTVCT2ZlczNMNXFEQUFDUjgvRHFOMTM3VXdDQXlObmNlUERoMVcrYWd3QUEwZEtYU3Q3MjJqTUQ2WlJSQ0FBUUxYY3RlMzV6NDBGelFBQWdXdjV6eTVvbk43NWpEZ2dBUk12N3RkVjMvT3BaYzBBQUlGcDJ0elJlOStLanZja0JvMEFBSUVMcXU5cXZmUDdIVFQxZFJzRVJQaElTTWw5ZFo5dWx6LzNJRmY4UkFJaVcyczYyUzU3OTRlNldScU5BQUNCQ3RoMnV2ZnJGUjJ2YW00MENBWUFJZVd2ZjlodGZlYUs5cjhjb0VBQ0lrRWZXcmZqMld5OGwwMm1qUUFBZ0t0cjdldjdtalorOXV2TkRvMEFBSUVMZU9iRDc5dGVmMmVjRlB3Z0FSRWYzUVAvOUsxOTVmUDBxSC9DTEFFQ0V2TDU3MHplWHY3Qy96YXQ5RUFDSWpKM05EZit3L0lWbDFWdU5BZ0dBcUtqcmJIdG85WnRQYm56SGxmMFJBSWlLdzkyZFAzeC8yV1ByVjdxeUd3SUFVVkhkMXZTdmE1Yy92V20xWC8wSUFFVEZiMnQyUHI1KzFTOTJia3dGM3R1RkFFQUVOUFYwUGZ2Um1pYzJ2TDJycGNFMEVBRElmTjBEL2IvY3RmSDVyUjhzcTk3cWNnNElBR1MrNXA2dU4vZHMrZVd1VGIrdTN0b3owRzhnQ0FCa3NsU1FYbDlYODlhKzdjdXF0NjQ1dU5kRC9BZ0FaTExlNU1DRytwbzFoL2ErZTJEUGIydDJkdlQzbWdrQ0FCbjdHMy9yNGRwTmpRYzNOUnhZWDdkL1k4T0IvcFIzYnlFQWtGbUNXRkRmMWJHdnJXbFhjLzNPNW9ZZHpmVTdtK3YzdEJ6MjJBNENBS0hYTmREWDF0dlQydGZkMU4zVjBOM1IwTlhlME4xUjM5VitzTDJscHIzbFFFZXplL2NJQUorbEZmdTMzL3JhMDhmNnU5dzMvOUx4dzB0Q01aRFczdTV2TG4vaGo5eDVENEowRUtTQ2RDb0lVdWwwS2tqM3A1STl5WUdlZ2Y3ZTVFQjNzcit6djYrdHQ4ZDllUVNBejdYZExZMjdXeHFQOVhlNTg0eEZZUWxBVDNMZzJZL2VkOE9BSTdLTUFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBQUFCQUVBQUFCQUFBQVFBQUFFQVFBQUFFQUFBUGkyZkNaeXhwbzRjZGZxNHltUDlYVWJrRllSbElBWFpPZGZPbWh2cVBWMjZaMHRyYjdmYk5nTEFIN0dnWXZyM0YxOWpEa2VVNUJjK2V0RU5vVDZFK1U4OUlBQWNSUjRDQWhBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBQUFCQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQUlnMndqeUZUSmRLb3ZsVHpXM3lVM2tZakg0bUdaeWYvRFFJNnBkQkM0WVhNVXhZc2ZYR0lLRE5ycW0rNmVVVDR1RkV1dDdXeWIrY2c5dGd5TzhCQVFnQUFBSUFBQUNBQUFBZ0NBQUFBZ0FBQUlBQUFDQUlBQUFDQUFBQWdBQUFJQWdBQUFJQUFBQ0FBQUFnQ0FBQUFnQUFBSUFBQUNBSUFBQUNBQUFBZ0FnQUFBSUFBQUNBQUFBZ0NBQUFBZ0FBQUlBQUFDQUlBQUFQQzVGUzkrY0lrcEFEZ0RBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUJBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUJBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBRUFBQUJBQUFBUUFBQUVBUUFBQUVBQUFCQUFBQVFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBRUFBakFCQUFBQVFBQUFFQUFBQkFFQUFBQkFBQUFRQUFBRUFRQUFBRUFBQUJBQUFBUUJBQUFBUUFBQUVBQUFCQUVBQUFCQUFBQVFBQUFFQVFBQUFFQUFBQkFCQUFBQVFBQUFFQUlETTlkOTlYdTQrQnRJUGlBQUFBQUJKUlU1RXJrSmdnZz09IiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmcifV19">
+<link rel="icon" href="data:image/png;base64,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">
+<title>Мои смены</title>
+<style>
+:root{--bg:#eef2f6;--card:#fff;--ink:#14213d;--mute:#6b778c;--acc:#0f8b6d;--accbg:#dff3ec;--line:#dde3ea;--danger:#c0392b;--btn:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1522;--card:#18223a;--ink:#eaf0fa;--mute:#93a0b8;--acc:#3fd1a5;--accbg:#143a33;--line:#273352;--danger:#ff7b6b;--btn:#06211a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1522;--card:#18223a;--ink:#eaf0fa;--mute:#93a0b8;--acc:#3fd1a5;--accbg:#143a33;--line:#273352;--danger:#ff7b6b;--btn:#06211a;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-tap-highlight-color:transparent}
+main{max-width:480px;margin:0 auto;padding:0 0 110px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--acc);color:var(--btn);padding:14px 18px 14px;border-radius:0 0 22px 22px}
+.top small{font-weight:600;font-size:13px;opacity:.85}
+.top .big{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.1;margin:2px 0 6px}
+.stats{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:13px;font-weight:600;opacity:.9}
+.stats b{font-weight:800}
+.pay{margin-top:10px;width:100%;padding:9px;border-radius:10px;border:1.5px solid currentColor;background:none;color:inherit;font-weight:800;font-size:13px}
+.list{padding:6px 14px 0}
+.mh{display:flex;justify-content:space-between;margin:18px 4px 6px;font-weight:800;font-size:14px;color:var(--mute)}
+.sh{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:8px;overflow:hidden}
+.sh.paid{opacity:.55}
+.sum{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer}
+.dt{width:44px;text-align:center;flex:none}
+.dt b{display:block;font-size:22px;line-height:1}
+.dt span{font-size:12px;color:var(--mute);font-weight:600}
+.mid{flex:1;min-width:0;font-size:13px;color:var(--mute);line-height:1.45}
+.mid b{color:var(--ink)}
+.net{font-weight:800;font-size:18px;color:var(--acc);white-space:nowrap}
+.det{display:none;padding:0 14px 12px;border-top:1px dashed var(--line);font-size:14px}
+.sh.open .det{display:block}
+.ln{display:flex;justify-content:space-between;padding:5px 0;color:var(--mute)}
+.ln b{color:var(--ink)}
+.ln em{font-style:normal;color:var(--danger);font-weight:800}
+.acts{display:flex;gap:8px;margin-top:6px}
+.mini{border:1.5px solid var(--line);background:none;color:var(--ink);border-radius:10px;padding:8px 14px;font:inherit;font-weight:800;font-size:13px;cursor:pointer}
+.mini.del{color:var(--danger);margin-left:auto}
+.paidtog{display:block;margin:16px auto 0;background:none;border:0;color:var(--mute);font:inherit;font-weight:600;font-size:14px;padding:8px;cursor:pointer}
+.empty{white-space:pre-line;color:var(--mute);text-align:center;padding:40px 20px;font-size:15px;line-height:1.5}
+.fab{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:var(--acc);color:var(--btn);border:0;border-radius:999px;padding:16px 22px;font:inherit;font-weight:800;font-size:16px;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer;z-index:6}
+.set{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:26px;color:var(--mute);font-size:14px}
+.set input{width:70px;font-size:15px;padding:7px 10px}
+/* sheet */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:20;align-items:flex-end}
+.ov.on{display:flex}
+.sheet{background:var(--card);width:100%;max-width:480px;margin:0 auto;border-radius:22px 22px 0 0;max-height:92%;overflow:auto;padding:18px 18px calc(18px + env(safe-area-inset-bottom,0px))}
+.sheet h2{margin:0;font-size:19px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+.sheet h2 button{border:0;background:none;color:var(--mute);font-size:26px;cursor:pointer}
+label{display:block;font-size:13px;color:var(--mute);font-weight:600;margin:12px 0 6px}
+input{width:100%;font:inherit;font-size:17px;font-weight:600;padding:12px 13px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+input:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:var(--acc)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.addx{display:grid;grid-template-columns:1fr 90px auto;gap:8px}
+.addx input{font-size:15px;padding:10px}
+.addx button{border:1.5px solid var(--line);background:none;color:var(--ink);border-radius:10px;padding:0 12px;font-weight:800;font-size:14px;cursor:pointer}
+.chip{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.chip em{font-style:normal;color:var(--danger);font-weight:800}
+.chip button{border:0;background:none;color:var(--mute);font-size:18px;padding:0 4px 0 10px;cursor:pointer}
+.calc{margin-top:12px;padding:11px 14px;border-radius:12px;background:var(--accbg);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.calc span{color:var(--mute);font-size:14px;font-weight:600}
+.calc b{font-size:20px;color:var(--acc);font-weight:800}
+.save{width:100%;margin-top:14px;padding:15px;border:0;border-radius:12px;background:var(--acc);color:var(--btn);font:inherit;font-weight:800;font-size:17px;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;font-weight:600;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:30;white-space:nowrap}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <small>Предварительная зарплата</small>
+    <div class="big" id="mtotal">0 ₽</div>
+    <div class="stats" id="stats"></div>
+    <button class="pay" id="payout">Получила зарплату — начать новый период</button>
+  </div>
+  <div class="list" id="list"></div>
+  <div class="set"><span>Процент от кассы:</span><input id="rate" type="text" inputmode="decimal"><span>%</span></div>
+</main>
+<button class="fab" id="fab">+ Смена</button>
+<div class="toast" id="toast"></div>
+
+<div class="ov" id="ov">
+  <div class="sheet">
+    <h2><span id="stitle">Новая смена</span><button id="close" aria-label="Закрыть">×</button></h2>
+    <label for="date">Дата</label>
+    <input id="date" type="date">
+    <label for="sum">Сдала кассы, ₽</label>
+    <input id="sum" type="text" inputmode="decimal" placeholder="0" autocomplete="off">
+    <div class="two">
+      <div><label for="tips">Чаевых всего, ₽</label><input id="tips" type="text" inputmode="decimal" placeholder="0" autocomplete="off"></div>
+      <div><label for="home">Забрала домой, ₽</label><input id="home" type="text" inputmode="decimal" placeholder="0" autocomplete="off"></div>
+    </div>
+    <label>Траты в счёт зарплаты (кухня, еда)</label>
+    <div class="addx">
+      <input id="xn" type="text" placeholder="Например, пицца" autocomplete="off">
+      <input id="xa" type="text" inputmode="decimal" placeholder="₽" autocomplete="off">
+      <button id="xadd">Добавить</button>
+    </div>
+    <div id="xlist"></div>
+    <div class="calc"><span id="plabel">Ваши 5%</span><b id="pay5">0 ₽</b></div>
+    <div class="calc" style="margin-top:8px"><span>В зарплату за смену</span><b id="net">0 ₽</b></div>
+    <button class="save" id="save">Сохранить смену</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var KEY="shifts_v1", RKEY="rate_v1";
+  var shifts=[], rate=5, draft=[], editId=null, showPaid=false;
+  try{ shifts=JSON.parse(localStorage.getItem(KEY)||"[]")||[]; }catch(e){ shifts=[]; }
+  try{ var r=parseFloat(localStorage.getItem(RKEY)); if(r>0) rate=r; }catch(e){}
+  shifts.forEach(function(s){ s.tips=s.tips||0; s.home=s.home||0; s.exp=s.exp||[]; s.paid=!!s.paid; });
+
+  var $=function(id){return document.getElementById(id)};
+  var fmt=new Intl.NumberFormat("ru-RU",{maximumFractionDigits:2});
+  var money=function(n){return fmt.format(Math.round(n*100)/100)+" ₽"};
+  var num=function(s){return parseFloat(String(s).replace(/\s/g,"").replace(",","."))||0};
+  var months=["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"];
+  var monthsS=["янв","фев","мар","апр","мая","июн","июл","авг","сен","окт","ноя","дек"];
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+  function today(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+  function persist(){ try{localStorage.setItem(KEY,JSON.stringify(shifts));localStorage.setItem(RKEY,String(rate));}catch(e){} }
+  function toast(t){var e=$("toast");e.textContent=t;e.className="toast on";setTimeout(function(){e.className="toast"},1900)}
+  function expSum(a){return a.reduce(function(t,x){return t+x.amount},0)}
+  function net(s){return s.sum*s.rate/100-expSum(s.exp)}
+
+  function preview(){
+    var p=num($("sum").value)*rate/100;
+    $("plabel").textContent="Ваши "+fmt.format(rate)+"%";
+    $("pay5").textContent=money(p);
+    $("net").textContent=money(p-expSum(draft));
+  }
+  function drawDraft(){
+    var b=$("xlist");b.innerHTML="";
+    draft.forEach(function(x,i){
+      var c=el("div","chip");c.appendChild(el("span",null,x.name));
+      var r=el("span");r.appendChild(el("em",null,"−"+money(x.amount)));
+      var d=el("button",null,"×");d.setAttribute("aria-label","Убрать");d.onclick=function(){draft.splice(i,1);drawDraft()};
+      r.appendChild(d);c.appendChild(r);b.appendChild(c);
+    });
+    preview();
+  }
+  function openSheet(s){
+    editId=s?s.id:null;
+    $("stitle").textContent=s?"Изменить смену":"Новая смена";
+    $("date").value=s?s.date:today();
+    $("sum").value=s?String(s.sum).replace(".",","):"";
+    $("tips").value=s&&s.tips?String(s.tips):"";
+    $("home").value=s&&s.home?String(s.home):"";
+    $("xn").value="";$("xa").value="";
+    draft=s?s.exp.map(function(x){return {name:x.name,amount:x.amount}}):[];
+    drawDraft();$("ov").className="ov on";
+    if(!s)setTimeout(function(){$("sum").focus()},50);
+  }
+  function closeSheet(){$("ov").className="ov"}
+
+  function shiftNode(s){
+    var d=s.date.split("-");
+    var c=el("div","sh"+(s.paid?" paid":""));
+    var sm=el("div","sum");
+    var dt=el("div","dt");dt.appendChild(el("b",null,String(+d[2])));dt.appendChild(el("span",null,monthsS[+d[1]-1]));
+    var mid=el("div","mid");
+    var l1=el("div");l1.appendChild(document.createTextNode("Касса "));l1.appendChild(el("b",null,money(s.sum)));
+    l1.appendChild(document.createTextNode(" · "+fmt.format(s.rate)+"% = "));l1.appendChild(el("b",null,money(s.sum*s.rate/100)));
+    mid.appendChild(l1);
+    var bits=[];
+    if(s.tips)bits.push("чай "+money(s.tips)+(s.home!==s.tips?" (домой "+money(s.home)+")":""));
+    if(s.exp.length)bits.push("траты −"+money(expSum(s.exp)));
+    if(s.paid)bits.push("выплачено");
+    if(bits.length)mid.appendChild(el("div",null,bits.join(" · ")));
+    sm.appendChild(dt);sm.appendChild(mid);sm.appendChild(el("div","net",money(net(s))));
+    sm.onclick=function(){c.classList.toggle("open")};
+    c.appendChild(sm);
+    var det=el("div","det");
+    function line(a,b){var x=el("div","ln");x.appendChild(el("span",null,a));x.appendChild(el("b",null,b));det.appendChild(x)}
+    line("Чаевых всего",money(s.tips));
+    line("Забрала домой",money(s.home));
+    if(s.tips-s.home>0)line("Потрачено на смене",money(s.tips-s.home));
+    s.exp.forEach(function(x){var r=el("div","ln");r.appendChild(el("span",null,x.name));r.appendChild(el("em",null,"−"+money(x.amount)));det.appendChild(r)});
+    var acts=el("div","acts");
+    if(!s.paid){var ed=el("button","mini","Изменить");ed.onclick=function(){openSheet(s)};acts.appendChild(ed);}
+    var del=el("button","mini del","Удалить");
+    del.onclick=function(){if(confirm("Удалить смену за "+(+d[2])+" "+monthsS[+d[1]-1]+"?")){shifts=shifts.filter(function(z){return z.id!==s.id});persist();render();toast("Смена удалена");}};
+    acts.appendChild(del);det.appendChild(acts);c.appendChild(det);
+    return c;
+  }
+  function group(box,arr){
+    var cur=null,mt=0,hdr=null;
+    function fin(){if(hdr)hdr.lastChild.textContent=money(mt)}
+    arr.forEach(function(s){
+      var k=s.date.slice(0,7);
+      if(k!==cur){fin();cur=k;mt=0;var p=k.split("-");var nm=months[+p[1]-1];
+        hdr=el("div","mh");hdr.appendChild(el("span",null,nm[0].toUpperCase()+nm.slice(1)+" "+p[0]));hdr.appendChild(el("span",null,""));box.appendChild(hdr);}
+      mt+=net(s);box.appendChild(shiftNode(s));
+    });
+    fin();
+  }
+
+  function render(){
+    var un=shifts.filter(function(s){return !s.paid}).sort(function(a,b){return a.date<b.date?-1:a.date>b.date?1:a.id-b.id});
+    var pd=shifts.filter(function(s){return s.paid}).sort(function(a,b){return a.date<b.date?-1:a.date>b.date?1:a.id-b.id});
+    var earn=0,exp=0,home=0;
+    un.forEach(function(s){earn+=s.sum*s.rate/100;exp+=expSum(s.exp);home+=s.home});
+    $("mtotal").textContent=money(earn-exp);
+    var st=$("stats");st.innerHTML="";
+    [["Смен",un.length],["Заработано",money(earn)],["Траты −",money(exp)],["Чай домой",money(home)]].forEach(function(a){
+      var s=el("span",null,a[0]+": ");s.appendChild(el("b",null,String(a[1])));st.appendChild(s);
+    });
+    $("payout").style.display=un.length?"block":"none";
+    var box=$("list");box.innerHTML="";
+    if(!un.length)box.appendChild(el("div","empty","В этом периоде смен пока нет.\nНажмите «+ Смена», чтобы добавить первую."));
+    group(box,un);
+    if(pd.length){
+      var t=el("button","paidtog",(showPaid?"Скрыть":"Показать")+" выплаченные смены ("+pd.length+")");
+      t.onclick=function(){showPaid=!showPaid;render()};box.appendChild(t);
+      if(showPaid)group(box,pd);
+    }
+  }
+
+  $("rate").value=String(rate).replace(".",",");
+  $("rate").addEventListener("input",function(){var v=num($("rate").value);if(v>0&&v<=100){rate=v;persist();preview();}});
+  $("sum").addEventListener("input",preview);
+  $("fab").onclick=function(){openSheet(null)};
+  $("close").onclick=closeSheet;
+  $("ov").addEventListener("click",function(e){if(e.target===$("ov"))closeSheet()});
+  $("xadd").addEventListener("click",function(){
+    var n=$("xn").value.trim(),a=num($("xa").value);
+    if(!n||!(a>0)){toast("Введите название и сумму");return;}
+    draft.push({name:n.slice(0,60),amount:a});$("xn").value="";$("xa").value="";drawDraft();
+  });
+  $("save").addEventListener("click",function(){
+    var s=num($("sum").value);
+    if(!(s>0)){toast("Введите сумму кассы");$("sum").focus();return;}
+    if(!$("date").value){toast("Выберите дату");return;}
+    var t=num($("tips").value),h=num($("home").value);
+    if(h>t)t=h;
+    if(editId){
+      var o=shifts.filter(function(z){return z.id===editId})[0];
+      if(o){o.date=$("date").value;o.sum=s;o.tips=t;o.home=h;o.exp=draft.slice();}
+    }else{
+      shifts.push({id:Date.now(),date:$("date").value,sum:s,rate:rate,tips:t,home:h,exp:draft.slice(),paid:false});
+    }
+    persist();closeSheet();render();toast("Смена сохранена");
+  });
+  $("payout").addEventListener("click",function(){
+    var un=shifts.filter(function(s){return !s.paid});
+    var t=0;un.forEach(function(s){t+=net(s)});
+    if(confirm("Отметить все смены как выплаченные ("+money(t)+") и начать новый период?")){
+      un.forEach(function(s){s.paid=true});persist();render();toast("Новый период начат");
+    }
+  });
+  render();
+  try{if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');}catch(e){}
+})();
+</script>
+</body>
+</html>
